@@ -1,4 +1,4 @@
-![CardNavigation](Docs/Images/Header.png)
+<img src="Docs/Images/Icon.png" width="180" />
 
 # CardNavigation
 
