@@ -13,14 +13,9 @@ extension CGPoint {
         return sqrt(x*x + y*y)
     }
     
-    /// Returns `true` if the absolute value of `y` is greater than that of `x`.
-    internal var isVertical: Bool {
-        return abs(y) > abs(x)
-    }
-    
-    /// Returns `true` if the point is vertical and `y` is greater than 0.
+    /// Returns `true` if `y` is greater than 0, and the absolute value of `y` is greater than that of `x`.
     internal var isDown: Bool {
-        return (y > 0) && isVertical
+        return (y > 0) && (abs(y) > abs(x))
     }
 }
 
