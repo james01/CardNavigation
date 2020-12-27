@@ -1,12 +1,14 @@
+![CardNavigation](Docs/Images/Header.png)
+
 # CardNavigation
 
-A `UINavigationController` subclass that displays its view controllers as a fully-interactive stack of cards.
+A `UINavigationController` subclass that displays its view controllers as an interactive stack of cards.
 
 ## Features
 
-- ✅ Fully interactive and interruptible
-- ✅ Works seamlessly with scroll views
-- ✅ Works in any orientation
+✅ Fully interactive and interruptible\
+✅ Works seamlessly with `UIScrollView`\
+✅ Works in any orientation
 
 ## Getting Started
 
@@ -26,4 +28,4 @@ James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01))
 
 ## License
 
-CardNavigation is released under the MIT license. See LICENSE for details.
+CardNavigation is released under the MIT license. [See LICENSE](LICENSE) for details.
