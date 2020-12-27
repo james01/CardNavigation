@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal final class CardTransitionDriver {
+final class CardTransitionDriver {
     
     let isPresenting: Bool
     

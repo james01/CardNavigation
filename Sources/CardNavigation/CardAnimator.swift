@@ -7,7 +7,7 @@
 
 import UIKit
 
-internal final class CardAnimator: NSObject {
+final class CardAnimator: NSObject {
 
     let isPresenting: Bool
     
