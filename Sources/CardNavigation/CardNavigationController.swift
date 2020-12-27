@@ -1,43 +1,57 @@
 //
-//  CardNavigationControllerDelegate.swift
-//  
+//  CardNavigationController.swift
+//  PageSheetSample
 //
-//  Created by James Randolph on 12/24/20.
+//  Created by James Randolph on 12/25/20.
 //
 
 import UIKit
 
-open class CardNavigationControllerDelegate: NSObject {
+open class CardNavigationController: UINavigationController {
     
-    public let panGestureRecognizer = UIPanGestureRecognizer()
+    /// The pan gesture recognizer driving the interactive portion of the transition.
+    let panGestureRecognizer = UIPanGestureRecognizer()
     
-    public weak var navigationController: UINavigationController?
-    
-    public var isTransitioning: Bool {
-        return navigationController?.transitionCoordinator != nil
+    /// Whether the navigation controller is push/pop transitioning.
+    var isTransitioning: Bool {
+        return transitionCoordinator != nil
     }
     
-    public init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-        super.init()
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate = self
         configurePanGestureRecognizer()
+        
+        // Navigation bar appearance
+        navigationBar.tintColor = .white
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
     
-    open func configurePanGestureRecognizer() {
+    open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        let cardViewController = CardViewController(child: viewController, scrollsCardWithContent: viewControllers.isEmpty)
+        super.pushViewController(cardViewController, animated: animated)
+    }
+    
+    private func configurePanGestureRecognizer() {
         panGestureRecognizer.delegate = self
         panGestureRecognizer.maximumNumberOfTouches = 1
         panGestureRecognizer.addTarget(self, action: #selector(initiateTransitionInteractively(_:)))
-        navigationController?.view.addGestureRecognizer(panGestureRecognizer)
+        view.addGestureRecognizer(panGestureRecognizer)
     }
     
-    @objc open func initiateTransitionInteractively(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc private func initiateTransitionInteractively(_ gestureRecognizer: UIPanGestureRecognizer) {
         if !isTransitioning && gestureRecognizer.state == .began {
-            navigationController?.popViewController(animated: true)
+            popViewController(animated: true)
         }
     }
 }
 
-extension CardNavigationControllerDelegate: UINavigationControllerDelegate {
+extension CardNavigationController: UINavigationControllerDelegate {
     
     open func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         guard operation != .none else { return nil }
@@ -49,7 +63,7 @@ extension CardNavigationControllerDelegate: UINavigationControllerDelegate {
     }
 }
 
-extension CardNavigationControllerDelegate: UIGestureRecognizerDelegate {
+extension CardNavigationController: UIGestureRecognizerDelegate {
     
     open func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -76,7 +90,7 @@ extension CardNavigationControllerDelegate: UIGestureRecognizerDelegate {
 
         guard !isTransitioning else { return panIsDown }
 
-        let isNotBottomVC = navigationController?.viewControllers.count ?? 0 > 1
+        let isNotBottomVC = viewControllers.count > 1
         return panIsDown && isNotBottomVC
     }
 }
