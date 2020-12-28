@@ -2,8 +2,6 @@
 
 # CardNavigation
 
-> Note: This package is a work in progress. Consider it incomplete until further notice.
-
 A navigation controller that displays its view controllers as an interactive stack of cards.
 
 ## Features
