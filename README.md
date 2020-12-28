@@ -4,6 +4,8 @@
 
 A navigation controller that displays its view controllers as an interactive stack of cards.
 
+Maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01)).
+
 ## Highlights
 
 - ✅ Fully interactive and interruptible
@@ -11,8 +13,6 @@ A navigation controller that displays its view controllers as an interactive sta
 - ✅ Supports changes in orientation
 - ✅ Can be used with or without storyboards
 - ✅ Written entirely in Swift using standard UIKit components
-
-`CardNavigation` is maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01)).
 
 ## Installation
 
