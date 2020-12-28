@@ -27,6 +27,7 @@ open class CardNavigationController: UINavigationController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
+        cardifyViewControllersIfNeeded()
         configurePanGestureRecognizer()
         
         // Navigation bar appearance
@@ -36,8 +37,22 @@ open class CardNavigationController: UINavigationController {
     }
     
     open override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        let cardViewController = CardViewController(child: viewController, scrollsCardWithContent: viewControllers.isEmpty)
-        super.pushViewController(cardViewController, animated: animated)
+        super.pushViewController(cardify(viewController, isBottom: viewControllers.isEmpty), animated: animated)
+    }
+    
+    private func cardify(_ viewController: UIViewController, isBottom: Bool) -> CardViewController {
+        if let cardViewController = viewController as? CardViewController {
+            return cardViewController
+        } else {
+            viewController.removeFromParent()
+            return CardViewController(childViewController: viewController, cardBackgroundViewClass: cardBackgroundViewClass, scrollsCardWithContent: isBottom)
+        }
+    }
+    
+    private func cardifyViewControllersIfNeeded() {
+        viewControllers = viewControllers.enumerated().map { (i, vc) -> CardViewController in
+            return cardify(vc, isBottom: i == 0)
+        }
     }
     
     private func configurePanGestureRecognizer() {
