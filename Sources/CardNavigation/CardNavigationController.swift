@@ -30,8 +30,7 @@ open class CardNavigationController: UINavigationController {
         cardifyViewControllersIfNeeded()
         configurePanGestureRecognizer()
         
-        // Navigation bar appearance
-        navigationBar.tintColor = .white
+        // Transparent navigation bar
         navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationBar.shadowImage = UIImage()
     }
