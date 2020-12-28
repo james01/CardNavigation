@@ -15,7 +15,7 @@ let package = Package(
     targets: [
         .target(
             name: "CardNavigation",
-            dependencies: []),
+            path: "Sources"),
         .testTarget(
             name: "CardNavigationTests",
             dependencies: ["CardNavigation"]),
