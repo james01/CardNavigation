@@ -9,6 +9,9 @@ import UIKit
 
 open class CardNavigationController: UINavigationController {
     
+    /// The class to use for displaying the card background content.
+    open var cardBackgroundViewClass: UIView.Type = CardBackgroundView.self
+    
     /// The pan gesture recognizer driving the interactive portion of the transition.
     let panGestureRecognizer = UIPanGestureRecognizer()
     

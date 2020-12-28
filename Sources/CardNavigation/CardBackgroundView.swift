@@ -1,5 +1,5 @@
 //
-//  CardView.swift
+//  CardBackgroundView.swift
 //  
 //
 //  Created by James Randolph on 12/25/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CardView: UIView {
+final class CardBackgroundView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

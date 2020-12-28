@@ -13,7 +13,7 @@ final class CardViewController: UIViewController {
     
     let scrollsCardWithContent: Bool
     
-    let cardView = CardView()
+    let cardBackgroundView: UIView
     
     let maskView = UIView()
     
@@ -23,24 +23,25 @@ final class CardViewController: UIViewController {
         return child.navigationItem
     }
     
-    init(child: UIViewController, scrollsCardWithContent: Bool) {
+    init(childViewController child: UIViewController, cardBackgroundViewClass: UIView.Type, scrollsCardWithContent: Bool) {
         self.child = child
+        self.cardBackgroundView = cardBackgroundViewClass.init()
         self.scrollsCardWithContent = scrollsCardWithContent
         super.init(nibName: nil, bundle: nil)
         
         edgesForExtendedLayout = []
         
         // Card view
-        cardView.frame = view.bounds
-        cardView.frame.size.height += 100
-        cardView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(cardView)
+        cardBackgroundView.frame = view.bounds
+        cardBackgroundView.frame.size.height += 100
+        cardBackgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(cardBackgroundView)
         
         // Mask view
         maskView.frame = view.bounds
         maskView.backgroundColor = .black
-        maskView.layer.cornerRadius = cardView.layer.cornerRadius
-        maskView.layer.maskedCorners = cardView.layer.maskedCorners
+        maskView.layer.cornerRadius = cardBackgroundView.layer.cornerRadius
+        maskView.layer.maskedCorners = cardBackgroundView.layer.maskedCorners
         if #available(iOS 13.0, *) {
             maskView.layer.cornerCurve = .continuous
         }
@@ -58,7 +59,7 @@ final class CardViewController: UIViewController {
         if scrollsCardWithContent, let scrollView = scrollView {
             scrollObserver = scrollView.observe(\.contentOffset) { [self] (scrollView, _) in
                 let dy = -min(scrollView.contentOffset.y + scrollView.adjustedContentInset.top, 0)
-                cardView.transform = CGAffineTransform(translationX: 0, y: dy)
+                cardBackgroundView.transform = CGAffineTransform(translationX: 0, y: dy)
             }
         }
     }
@@ -69,6 +70,6 @@ final class CardViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        maskView.frame = cardView.frame
+        maskView.frame = cardBackgroundView.frame
     }
 }
