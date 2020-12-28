@@ -7,10 +7,16 @@
 
 import UIKit
 
+/// A navigation controller that displays its view controllers as an interactive stack of cards.
 open class CardNavigationController: UINavigationController {
     
-    /// The class to use for displaying the card background content.
-    open var cardBackgroundViewClass: UIView.Type = CardBackgroundView.self
+    /// The class to use for displaying the card's background content.
+    ///
+    /// You can override this property to return a custom view class to control the appearance of the card's background content.
+    /// You may choose to return a class with rounded corners and a shadow, for example.
+    open var cardBackgroundViewClass: UIView.Type {
+        return CardBackgroundView.self
+    }
     
     /// The pan gesture recognizer driving the interactive portion of the transition.
     let panGestureRecognizer = UIPanGestureRecognizer()
