@@ -14,8 +14,6 @@ A navigation controller that displays its view controllers as an interactive sta
 
 `CardNavigation` is maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01)).
 
----
-
 ## Installation
 
 ### CocoaPods
@@ -36,9 +34,9 @@ dependencies: [
 ]
 ```
 
----
+## Usage
 
-## Basic Usage
+### Getting Started
 
 CardNavigation consists of a single class: `CardNavigationController`. It behaves like a standard `UINavigationController`.
 
@@ -54,16 +52,55 @@ Create your `CardNavigationController` instance the way you would a regular old 
 let nav = CardNavigationController(rootViewController: SomeViewController())
 ```
 
-By default, the navigation bar is transparent so the navigation controller's view's background color shows through. Change this color to whatever you'd like. You can also change the navigation bar's tint color.
+### Navigation Bar Appearance
+
+By default, the navigation bar is transparent so the navigation controller's view's background color shows through. Change this color to whatever you'd like. You may also want to change the navigation bar's tint color.
 
 ```swift
 nav.view.backgroundColor = .systemBlue
 nav.navigationBar.tintColor = .white
 ```
 
-## Advanced Usage
+### Card Appearance
 
----
+To change the card appearance, create a custom view class.
+
+```swift
+import UIKit
+
+class MyCardBackgroundView: UIView {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .white
+
+        layer.cornerRadius = 32
+        layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        layer.cornerCurve = .continuous
+
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 4
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+```
+
+Then, create a subclass of `CardNavigationController` and override the `cardBackgroundViewClass` property to return your custom class.
+
+```swift
+import UIKit
+import CardNavigation
+
+class MyCardNavigationController: CardNavigationController {
+
+    override var cardBackgroundViewClass: UIView.Type {
+        return MyCardBackgroundView.self
+    }
+}
+```
 
 ## License
 
