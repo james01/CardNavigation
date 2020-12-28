@@ -2,15 +2,25 @@
 
 # CardNavigation
 
-A `UINavigationController` subclass that displays its view controllers as an interactive stack of cards.
+A navigation controller that displays its view controllers as an interactive stack of cards.
 
 ## Features
 
-✅ Fully interactive and interruptible\
-✅ Works seamlessly with `UIScrollView`\
-✅ Works in any orientation
+- ✅ Fully interactive and interruptible
+- ✅ Works seamlessly with `UIScrollView`
+- ✅ Works in any orientation
 
-## Getting Started
+## Installation
+
+### CocoaPods
+
+Add the following line to your `Podfile`:
+
+```ruby
+pod 'CardNavigation'
+```
+
+## Usage
 
 CardNavigation consists of a single class: `CardNavigationController`. Use it like you would any other `UINavigationController`:
 
@@ -22,7 +32,7 @@ import CardNavigation
 let cardNavigationController = CardNavigationController(rootViewController: SomeViewController())
 ```
 
-## Credits
+## Author
 
 James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01))
 
