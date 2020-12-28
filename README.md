@@ -2,6 +2,8 @@
 
 # CardNavigation
 
+> Note: This package is a work in progress. Consider it incomplete until further notice.
+
 A navigation controller that displays its view controllers as an interactive stack of cards.
 
 ## Features
@@ -9,6 +11,7 @@ A navigation controller that displays its view controllers as an interactive sta
 - ✅ Fully interactive and interruptible
 - ✅ Works seamlessly with `UIScrollView`
 - ✅ Works in any orientation
+- ✅ Compatible with Storyboards
 
 ## Installation
 
@@ -22,14 +25,16 @@ pod 'CardNavigation'
 
 ## Usage
 
-CardNavigation consists of a single class: `CardNavigationController`. Use it like you would any other `UINavigationController`:
+CardNavigation consists of a single class: `CardNavigationController`. You can use it like you would any other `UINavigationController`:
 
 ```swift
 import CardNavigation
 
 ...
 
-let cardNavigationController = CardNavigationController(rootViewController: SomeViewController())
+let nav = CardNavigationController(rootViewController: SomeViewController())
+nav.view.backgroundColor = .systemBlue
+nav.navigationBar.tintColor = .white
 ```
 
 ## Author
