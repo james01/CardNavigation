@@ -14,6 +14,8 @@ A navigation controller that displays its view controllers as an interactive sta
 
 `CardNavigation` is maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01)).
 
+---
+
 ## Installation
 
 ### CocoaPods
@@ -33,6 +35,8 @@ dependencies: [
     .package(url: "https://github.com/james01/CardNavigation.git", .upToNextMajor(from: "0.0.0"))
 ]
 ```
+
+---
 
 ## Basic Usage
 
@@ -58,6 +62,8 @@ nav.navigationBar.tintColor = .white
 ```
 
 ## Advanced Usage
+
+---
 
 ## License
 
