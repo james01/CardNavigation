@@ -7,8 +7,6 @@
 
 A navigation controller that displays its view controllers as an interactive stack of cards.
 
-Maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01)).
-
 ## Highlights
 
 - ✅ Fully interactive and interruptible
@@ -107,6 +105,10 @@ class MyCardNavigationController: CardNavigationController {
     }
 }
 ```
+
+## Author
+
+James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandolph01))
 
 ## License
 
