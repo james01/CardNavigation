@@ -15,7 +15,7 @@ final class CardViewController: UIViewController {
     
     let cardBackgroundView: UIView
     
-    let maskView = UIView()
+    let mask = UIView()
     
     private var scrollObserver: NSKeyValueObservation?
     
@@ -37,21 +37,27 @@ final class CardViewController: UIViewController {
         cardBackgroundView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(cardBackgroundView)
         
-        // Mask view
-        maskView.frame = view.bounds
-        maskView.backgroundColor = .black
-        maskView.layer.cornerRadius = cardBackgroundView.layer.cornerRadius
-        maskView.layer.maskedCorners = cardBackgroundView.layer.maskedCorners
+        // Mask
+        mask.frame = view.bounds
+        mask.backgroundColor = .black
+        mask.layer.cornerRadius = cardBackgroundView.layer.cornerRadius
+        mask.layer.maskedCorners = cardBackgroundView.layer.maskedCorners
         if #available(iOS 13.0, *) {
-            maskView.layer.cornerCurve = .continuous
+            mask.layer.cornerCurve = .continuous
         }
+        
+        // Masked container
+        let maskedContainer = UIView()
+        maskedContainer.frame = view.bounds
+        maskedContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        maskedContainer.mask = mask
+        view.addSubview(maskedContainer)
         
         // Child view controller
         addChild(child)
-        child.view.frame = view.bounds
+        child.view.frame = maskedContainer.bounds
         child.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        child.view.mask = maskView
-        view.addSubview(child.view)
+        maskedContainer.addSubview(child.view)
         child.didMove(toParent: self)
         
         // Listen to scroll
@@ -70,6 +76,6 @@ final class CardViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        maskView.frame = cardBackgroundView.frame
+        mask.frame = cardBackgroundView.frame
     }
 }

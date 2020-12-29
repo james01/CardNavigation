@@ -26,10 +26,6 @@ open class CardNavigationController: UINavigationController {
         return transitionCoordinator != nil
     }
     
-    open override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
         delegate = self
@@ -110,10 +106,14 @@ extension CardNavigationController: UIGestureRecognizerDelegate {
         guard gestureRecognizer === self.panGestureRecognizer else { return true }
 
         let panIsDown = panGestureRecognizer.translation(in: panGestureRecognizer.view).isDown
-
-        guard !isTransitioning else { return panIsDown }
-
+        guard panIsDown else { return false }
+        
+        guard let topVC = transitionCoordinator?.viewController(forKey: .from) ?? topViewController else { return false }
+        let topViewContainsPoint = topVC.view.point(inside: gestureRecognizer.location(in: topVC.view), with: nil)
+        guard topViewContainsPoint else { return false }
+        
         let isNotBottomVC = viewControllers.count > 1
-        return panIsDown && isNotBottomVC
+        
+        return isTransitioning ? true : isNotBottomVC
     }
 }
