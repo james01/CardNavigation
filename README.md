@@ -21,7 +21,7 @@ Maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandol
 To install `CardNavigation` using [CocoaPods](https://cocoapods.org), add the following line to your `Podfile`:
 
 ```ruby
-pod 'CardNavigation'
+pod 'CardNavigation', '~> 1.0'
 ```
 
 ### Swift Package Manager
@@ -30,7 +30,7 @@ To install `CardNavigation` using the [Swift Package Manager](https://swift.org/
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/james01/CardNavigation.git", .upToNextMajor(from: "0.0.0"))
+    .package(url: "https://github.com/james01/CardNavigation.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
