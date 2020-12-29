@@ -34,9 +34,9 @@ dependencies: [
 ]
 ```
 
-<img align="right" src="Docs/Images/Screen.gif" width="239" />
-
 ## Usage
+
+<img align="right" src="Docs/Images/Screen.gif" width="239" />
 
 ### Getting Started
 
