@@ -34,11 +34,11 @@ dependencies: [
 ]
 ```
 
+<img align="right" src="Docs/Images/Screen.gif" width="239" />
+
 ## Usage
 
 ### Getting Started
-
-<img align="right" src="Docs/Images/Screen.gif" width="239" />
 
 CardNavigation consists of a single class: `CardNavigationController`. It behaves like a standard `UINavigationController`.
 
