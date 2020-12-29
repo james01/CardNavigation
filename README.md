@@ -1,4 +1,4 @@
-<img src="Docs/Images/Icon.png" width="180" />
+<img src="https://raw.githubusercontent.com/james01/CardNavigation/main/Docs/Images/Icon.png" width="180" />
 
 # CardNavigation
 
@@ -17,7 +17,7 @@ A navigation controller that displays its view controllers as an interactive sta
 
 ## Example
 
-<img src="Docs/Images/Screen.gif" width="239" />
+<img src="https://raw.githubusercontent.com/james01/CardNavigation/main/Docs/Images/Screen.gif" width="239" />
 
 ## Installation
 
