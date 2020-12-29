@@ -14,6 +14,10 @@ Maintained by James Randolph ([@jamesrandolph01](https://twitter.com/jamesrandol
 - ✅ Can be used with or without storyboards
 - ✅ Written entirely in Swift using standard UIKit components
 
+## Example
+
+<img src="Docs/Images/Screen.gif" width="239" />
+
 ## Installation
 
 ### CocoaPods
@@ -35,8 +39,6 @@ dependencies: [
 ```
 
 ## Usage
-
-<img align="right" src="Docs/Images/Screen.gif" width="239" />
 
 ### Getting Started
 
