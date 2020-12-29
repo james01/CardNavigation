@@ -2,8 +2,8 @@
 
 # CardNavigation
 
-<img src="https://img.shields.io/cocoapods/v/CardNavigation" />
-<img src="https://img.shields.io/cocoapods/p/CardNavigation?logo=Apple" />
+[![CocoaPods](https://img.shields.io/cocoapods/v/CardNavigation)](https://cocoapods.org/pods/CardNavigation)
+![Platform](https://img.shields.io/cocoapods/p/CardNavigation?logo=Apple)
 
 A navigation controller that displays its view controllers as an interactive stack of cards.
 
