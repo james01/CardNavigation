@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { "James Randolph" => "jwrand16@gmail.com" }
   s.social_media_url = "https://twitter.com/jamesrandolph01"
   s.platform         = :ios, "11.0"
+  s.swift_version    = "5.3"
   s.source           = { :git => "https://github.com/james01/CardNavigation.git", :tag => "#{s.version}" }
   s.source_files     = "Sources/**/*.{swift}"
   s.frameworks       = "UIKit"
