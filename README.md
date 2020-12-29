@@ -38,6 +38,8 @@ dependencies: [
 
 ### Getting Started
 
+<img align="right" src="Docs/Images/Screen.gif" width="239" />
+
 CardNavigation consists of a single class: `CardNavigationController`. It behaves like a standard `UINavigationController`.
 
 At the top of the file where you'd like to use a `CardNavigationController`, import `CardNavigation`.
@@ -52,13 +54,12 @@ Create your `CardNavigationController` instance the way you would a regular old 
 let nav = CardNavigationController(rootViewController: SomeViewController())
 ```
 
-### Navigation Bar Appearance
+### Navigation Bar Color
 
-By default, the navigation bar is transparent so the navigation controller's view's background color shows through. Change this color to whatever you'd like. You may also want to change the navigation bar's tint color.
+By default, the navigation bar is transparent. The color that shows in its place is the background color of the navigation controller.
 
 ```swift
-nav.view.backgroundColor = .systemBlue
-nav.navigationBar.tintColor = .white
+nav.view.backgroundColor = .systemTeal
 ```
 
 ### Card Appearance
