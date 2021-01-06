@@ -5,9 +5,7 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/CardNavigation)](https://cocoapods.org/pods/CardNavigation)
 ![Platform](https://img.shields.io/cocoapods/p/CardNavigation?logo=Apple)
 
-The easiest* way to turn a navigation controller into an interactive stack of cards.
-
-*according to me
+The easiest way to turn a navigation controller into an interactive stack of cards.
 
 ## Highlights
 
