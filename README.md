@@ -57,6 +57,12 @@ Create an instance of `CardNavigationController` the way you would a regular `UI
 let nav = CardNavigationController(rootViewController: SomeViewController())
 ```
 
+When you push a view controller, it will automatically be displayed as an interactive card.
+
+```swift
+nav.pushViewController(AnotherViewController(), animated: true)
+```
+
 ### Navigation Bar Color
 
 By default, the navigation bar is transparent. The color that shows in its place is the background color of the navigation controller.
