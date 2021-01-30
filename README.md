@@ -51,7 +51,7 @@ At the top of the file where you'd like to use a `CardNavigationController`, imp
 import CardNavigation
 ```
 
-Create your `CardNavigationController` instance the way you would a regular old `UINavigationController`.
+Create an instance of `CardNavigationController` the way you would a regular `UINavigationController`.
 
 ```swift
 let nav = CardNavigationController(rootViewController: SomeViewController())
