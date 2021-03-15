@@ -18,6 +18,13 @@ open class CardNavigationController: UINavigationController {
         return CardBackgroundView.self
     }
     
+    /// Whether the bottom card in the navigation stack should scroll with the content of the bottom view controller.
+    ///
+    /// This property only has an effect when the bottom view controller contains a scroll view.
+    open var scrollsBottomCardWithContent: Bool {
+        return true
+    }
+    
     /// The pan gesture recognizer driving the interactive portion of the transition.
     let panGestureRecognizer = UIPanGestureRecognizer()
     
@@ -46,7 +53,7 @@ open class CardNavigationController: UINavigationController {
             return cardViewController
         } else {
             viewController.removeFromParent()
-            return CardViewController(childViewController: viewController, cardBackgroundViewClass: cardBackgroundViewClass, scrollsCardWithContent: isBottom)
+            return CardViewController(childViewController: viewController, cardBackgroundViewClass: cardBackgroundViewClass, scrollsCardWithContent: isBottom && scrollsBottomCardWithContent)
         }
     }
     
