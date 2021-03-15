@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "CardNavigation"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "A navigation controller that displays its view controllers as an interactive stack of cards."
   s.homepage         = "https://github.com/james01/CardNavigation"
   s.screenshots      = "https://raw.githubusercontent.com/james01/CardNavigation/main/Docs/Images/Screen.gif"
