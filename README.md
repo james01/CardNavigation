@@ -26,7 +26,7 @@ The easiest way to turn a navigation controller into an interactive stack of car
 To install CardNavigation using [CocoaPods](https://cocoapods.org), add the following line to your `Podfile`:
 
 ```ruby
-pod 'CardNavigation', '~> 1.0'
+pod 'CardNavigation', '~> 1.1'
 ```
 
 ### Swift Package Manager
@@ -35,7 +35,7 @@ To install CardNavigation using the [Swift Package Manager](https://swift.org/pa
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/james01/CardNavigation.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/james01/CardNavigation.git", .upToNextMajor(from: "1.1.0"))
 ]
 ```
 
