@@ -1,6 +1,6 @@
 //
 //  CardViewController.swift
-//  PageSheetSample
+//
 //
 //  Created by James Randolph on 12/25/20.
 //
